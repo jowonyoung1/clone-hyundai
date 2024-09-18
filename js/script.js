@@ -31,24 +31,6 @@ window.onload = function () {
     })();
   }
 
-  // 모달창
-  let body = document.querySelector("body");
-  let modal = document.querySelector(".modal");
-  modal.addEventListener("click", function () {
-    // modal.style.display = "none";
-    // fadeOut(modal);
-    anime({
-      targets: ".modal",
-      delay: 200,
-      duration: 500,
-      opacity: 0,
-      easing: "easeInOutQuad",
-      complete: function () {
-        modal.style.display = "none";
-        body.classList.add("active");
-      },
-    });
-  });
   // 스크롤 기능
   // 스크롤바의 상단위치
   let scy = 0;
@@ -241,3 +223,12 @@ window.onload = function () {
     },
   });
 };
+
+// 저작권 안내창
+window.addEventListener("load", function () {
+  const closeBt = document.querySelector(".popup-close");
+  const popup = document.querySelector(".popup");
+  closeBt.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
+});
